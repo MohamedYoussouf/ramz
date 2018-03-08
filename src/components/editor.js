@@ -14,7 +14,11 @@ class Editor extends Component {
 
   render() {
     return (
-      <div ref="editor" className="editor" contentEditable={true} onInput={this.onInputChange}>
+      <div ref="editor"
+        className="editor" 
+        contentEditable={true} 
+        suppressContentEditableWarning="true" 
+        onInput={this.onInputChange}>
       </div>
     );
   };
