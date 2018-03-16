@@ -4,8 +4,9 @@ var webpack = require('webpack');
 module.exports = {
     entry: './src/app.js',
     output: {
-        // patn: __dirname,
-        filename: 'public/bundle.js'
+      path: path.join(__dirname, 'public'),
+      // publicPath: "/public",
+        filename: 'bundle.js'
     },
     module: {
       loaders: [
@@ -22,10 +23,24 @@ module.exports = {
           loader: 'style-loader!css-loader!sass-loader'
         },
         {
+          test: /\.(png|jpg|gif)$/,
+          use: [
+            {
+              loader: 'file-loader',
+            }
+          ]
+        },
+        {
           test: /\.svg$/,
           loader: 'svg-inline-loader'
         }
       ]
+    },
+    devServer: {
+      historyApiFallback: true,
+      contentBase: 'public',
+      hot: true
+
     },
     watch: true
 };

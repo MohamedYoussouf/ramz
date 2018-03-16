@@ -7,7 +7,6 @@ const SubMenuItem = (props) => {
         onBlur={props.item.method}
         title={props.item.title}>
         {props.item.title}
-        {console.log(props.item.method)}
       </button>
     </li>
   )

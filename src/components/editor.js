@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 let editorContent;
-
+//  Editor compponent
 class Editor extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +19,7 @@ class Editor extends Component {
         contentEditable={true} 
         suppressContentEditableWarning="true" 
         onInput={this.onInputChange}>
+        أكتب شيءً ما هنا
       </div>
     );
   };
@@ -26,18 +27,13 @@ class Editor extends Component {
   componentDidMount() {
 
     editorContent = this.refs.editor.innerText;
-
-    // this.setState({content: editorContent});
     this.onInputChange(this.state.content);
 
   }
 
 
   onInputChange(value) {
-    console.log(localStorage.getItem('storedContent'));
-
     editorContent = this.refs.editor.innerText;
-    // console.log(event.target.value);
     this.setState({content: editorContent});
     this.props.content(editorContent);
 
