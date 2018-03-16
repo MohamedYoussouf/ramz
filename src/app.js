@@ -2,12 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import showdown, {Converter} from 'showdown';
 import HtmlToReactParser from 'html-to-react';
-// import pdfConverter from 'jspdf';
-// import html2pdf from 'html2pdf.js';
-// import html2canvas from 'html2canvas';
-// import downloadIcon from './icons/download.svg';
 import previewIcon from './icons/preview.svg';
-// import textDirectionIcon from './icons/text-direction.svg';
 
 //  Import Components
 import Editor from './components/editor';
@@ -41,7 +36,6 @@ class App extends Component {
     const html = this.toMarkDown(this.state.inputText);
     const text = this.state.inputText;
     const docTitle = this.state.title;
-    // const self = this;
     //  Menu Items Object
     const menuItems = [
       {
@@ -53,7 +47,7 @@ class App extends Component {
         'submenu': [
           {
             'id': 1,
-            'title': 'حفظ كمستند Markdown',
+            'title': 'حفظ كمستند نصي',
             'method': () => {
               const virtualAnchor = document.createElement('a');
               virtualAnchor.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -87,25 +81,6 @@ class App extends Component {
 
             }
           },
-          // {
-          //   //  Save as PDF
-          //   'id': 3,
-          //   'title': 'حفض كملف PDF',
-          //   'method': () => {
-          //     const virtualAnchor = document.createElement('a');
-          //     const htmlFileTemplate = `<html dir="rtl"><head><title>${docTitle}</title><link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notokufiarabic.css"/><link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css"/><style>body {padding: 5cm 4cm;font-family:"Droid Arabic Naskh", sans-serif, tahoma;} h1, h2, h3, h4, h5, h6 {font-family:"Noto Kufi Arabic", sans-serif, tahoma}</style></head><body>${html}</body></html>`;
-
-          //     virtualAnchor.setAttribute('href', `http://api.html2pdfrocket.com/pdf?value=${htmlFileTemplate}&apikey=4405eb21-132b-49cf-a2a4-9bace1062294`);
-          //     virtualAnchor.setAttribute('download', docTitle);
-  
-          //     virtualAnchor.style.display = 'none';
-          //     document.body.appendChild(virtualAnchor);
-  
-          //     virtualAnchor.click();
-  
-          //     document.body.removeChild(virtualAnchor);
-          //   }
-          // }
         ]
       },
       {
@@ -151,7 +126,7 @@ class App extends Component {
               <Editor content={this.onLoad}/>
               <Preview toShow={innerHtml}/>
             </div>
-            <p className="credits">تطوير <a href="https://www.mohamedmya.com/">محمد يوسف</a> رمز مشروع مفتوح مصدر <a href="mo">ساهم بتطويره</a></p>
+            <p className="credits">تطوير <a href="https://www.mohamedmya.com/">محمد يوسف</a> رمز مشروع مفتوح مصدر <a href="https://github.com/MohamedYoussouf/ramz">ساهم بتطويره</a></p>
         </div>
     );
   };

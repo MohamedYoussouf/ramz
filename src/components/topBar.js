@@ -9,7 +9,7 @@ const TopBar = (props) => {
     <ul className="top_menu">
       {props.items.map((item, index) => <MenuItem key={item.id} item={item} index={index}/>)}
       <input type="text" className="doc-title" value={props.value} onChange={props.onChangeValue} placeholder="عنوان المستند"/>
-      <img src={Logo} id="logo" title="رمز"/>
+      <img src={Logo} id="logo" title="رمز - محرر markdown"/>
     </ul>
   );
 }
