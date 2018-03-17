@@ -1,10 +1,10 @@
 {
-  "name": "mdeditor",
+  "name": "ramz",
   "version": "1.0.0",
-  "description": "Markdown editor",
+  "description": "Ramz markdown editor",
   "main": "app.js",
   "scripts": {
-    "webpack": "webpack",
+    "build": "webpack",
     "start": "webpack-dev-server --inline --hot"
   },
   "author": "Mohamed Youssouf",

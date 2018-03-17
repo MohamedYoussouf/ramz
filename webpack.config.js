@@ -42,5 +42,5 @@ module.exports = {
       hot: true
 
     },
-    watch: true
+    // watch: true
 };
