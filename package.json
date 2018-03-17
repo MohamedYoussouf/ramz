@@ -15,6 +15,7 @@
     "normalize-scss": "^7.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-helmet": "^5.2.0",
     "react-icons": "^2.2.5",
     "showdown": "^1.7.2"
   },

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import {Helmet} from "react-helmet";
+
 import showdown, {Converter} from 'showdown';
 import HtmlToReactParser from 'html-to-react';
 import previewIcon from './icons/preview.svg';
@@ -120,14 +122,18 @@ class App extends Component {
       // }
     ]
     return (
-        <div className="container" dir={textDir}>
-            <TopBar items={menuItems} value={this.state.title} onChangeValue={this.handleChange}/>
-            <div className="body-wrapper" id="body-wrapper">
-              <Editor content={this.onLoad}/>
-              <Preview toShow={innerHtml}/>
-            </div>
-            <p className="credits">تطوير <a href="https://www.mohamedmya.com/">محمد يوسف</a> رمز مشروع مفتوح مصدر <a href="https://github.com/MohamedYoussouf/ramz">ساهم بتطويره</a></p>
+      <div className="container" dir={textDir}>
+        <Helmet>
+            <title>رمز - محرر markdown أونلاين</title>
+            <meta name="description" content="محرر markdown أونلاين متكامل ويدعم العربية"/>
+        </Helmet>
+        <TopBar items={menuItems} value={this.state.title} onChangeValue={this.handleChange}/>
+        <div className="body-wrapper" id="body-wrapper">
+          <Editor content={this.onLoad}/>
+          <Preview toShow={innerHtml}/>
         </div>
+        <p className="credits">تطوير <a href="https://www.mohamedmya.com/">محمد يوسف</a> رمز مشروع مفتوح مصدر <a href="https://github.com/MohamedYoussouf/ramz">ساهم بتطويره</a></p>
+      </div>
     );
   };
 
