@@ -19,7 +19,7 @@ class Editor extends Component {
         contentEditable={true} 
         suppressContentEditableWarning="true" 
         onInput={this.onInputChange}>
-        أكتب شيءً ما هنا
+         أكتب شيئًا ما.
       </div>
     );
   };

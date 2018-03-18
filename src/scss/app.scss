@@ -201,4 +201,8 @@ body {
   font-size: 13px;
   font-weight: bold;
   color: lighten($black-color, 56);
+
+  a {
+    margin-left: 15px;
+  }
 }
