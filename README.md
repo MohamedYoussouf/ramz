@@ -3,7 +3,7 @@
 ‏مُحرّر ماركداون يفهم اللغة العربيّة
 [https://ramz.netlify.com](https://ramz.netlify.com/)
 
-![](photos/rams.png)
+![](example.png)
 
 ### Features | المُميّزات
 - Export files as txt/HTML
